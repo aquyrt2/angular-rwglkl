@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 
-import { CartService } from '../cart.service';
+import { CartService } from "../cart.service";
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: "app-cart",
+  templateUrl: "./cart.component.html",
+  styleUrls: ["./cart.component.css"]
 })
 export class CartComponent implements OnInit {
   items;
@@ -35,7 +35,7 @@ export class CartComponent implements OnInit {
 
   onSubmit(customerData) {
     // Process checkout data here
-    console.warn('Your order has been submitted', customerData);
+    window.alert("Your order has been submitted (+ Cart is reset)", customerData);
 
     this.items = this.cartService.clearCart();
     this.checkoutForm.reset();
